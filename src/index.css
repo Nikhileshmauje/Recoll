@@ -1,0 +1,118 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #3E3F5B;
+  --secondary: #8AB2A6;
+  --accent: #ACD3A8;
+  --neutral: #F6F1DE;
+  --text-primary: #2A2B3D;
+  --text-secondary: #3E3F5B;
+}
+
+body {
+  background-color: var(--neutral);
+  min-height: 100vh;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+}
+
+.app-title {
+  font-family: 'Monument Extended', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(138, 178, 166, 0.2);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(138, 178, 166, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card {
+  background: white;
+  border: 1px solid rgba(138, 178, 166, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.glass-input {
+  background: white;
+  border: 1px solid var(--secondary);
+  color: var(--text-primary);
+}
+
+.glass-input::placeholder {
+  color: rgba(62, 63, 91, 0.6);
+}
+
+.glass-button {
+  background: var(--secondary);
+  color: white;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.glass-button:hover {
+  background: #7AA196;
+}
+
+.bento-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .bento-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.resource-card {
+  width: 100%;
+}
+
+.resource-card.video {
+  aspect-ratio: 16/9;
+  min-height: 300px;
+}
+
+.resource-card.document {
+  aspect-ratio: 1/1.414;
+  min-height: 400px;
+}
+
+.resource-card.web {
+  aspect-ratio: 1/1;
+  min-height: 250px;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
